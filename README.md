@@ -4,9 +4,7 @@
 
 Check out the [post](https://testdriven.io/d# ockerizing-django-with-postgres-gunicorn-and-nginx).
 
-## Want to use this project?
-
-### Development
+## Development
 
 Uses the default Django development server.
 
@@ -28,8 +26,13 @@ docker-compose -f docker-compose.yml exec web python manage.py createsuperuser
 
 You can test it out at [http://localhost:8000/admin](http://localhost:8000/admin)
 
-### Production
+### Add new migrations
+```sh
+docker-compose -f docker-compose.yml exec web python manage.py makemigrations
+```
 
+### Production
+<!-- 
 Uses gunicorn + nginx.
 
 1. Rename *.env.prod-sample* to *.env.prod* and *.env.prod.db-sample* to *.env.prod.db*. Update the environment variables.
@@ -39,4 +42,4 @@ Uses gunicorn + nginx.
     $ docker-compose -f docker-compose.prod.yml up -d --build
     ```
 
-    Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built.
+    Test it out at [http://localhost:1337](http://localhost:1337). No mounted folders. To apply changes, the image must be re-built. -->
